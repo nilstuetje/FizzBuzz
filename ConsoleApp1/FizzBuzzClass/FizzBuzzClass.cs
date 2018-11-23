@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace FizzBuzzClass
+namespace FizzBuzzNamespace
 {
     /// <summary>
     /// class to hold methodes for FizzBuzz, a simple programming challange that prints out a number of items with all dividable by 3 beeing
     /// replaced by Fizz, dividable by 5 Buzz and dividable by both FizzBuzz
     /// </summary>
-    public static class FizzBuzz
+    public static class FizzBuzzClass
     {
         //variabbles to hold the start and end point of the fizzbuzz sequence, defaulting to 0 to 100
-        static int g_start = 0;
+        static int g_start = 1;
         static int g_end = 100;
 
         //variables holding the divders to replace by a word( for easy modification)
@@ -69,7 +69,7 @@ namespace FizzBuzzClass
         }
 
         /// <summary>
-        /// methode to retun a fizzbuzz sequence with the classic start/end of 0 and 100
+        /// methode to retun a fizzbuzz sequence with the classic start/end of 1 and 100
         /// </summary>
         /// <returns></returns>
         public static string[] Calculate()

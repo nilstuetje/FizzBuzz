@@ -1,4 +1,5 @@
 ﻿using System;
+using FizzBuzzNamespace;
 
 namespace ConsoleApp1
 {
@@ -6,7 +7,19 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //array to hold the fizzbuzz sequence calculated by FizzBuzzClass
+            string[] sequence;
+
+            sequence = FizzBuzzClass.Calculate();
+
+            //printing out the sequence
+            foreach(string i in sequence)
+            {
+                Console.WriteLine(i);
+            }
+
+            //pausing
+            Console.Read();
         }
     }
 }
