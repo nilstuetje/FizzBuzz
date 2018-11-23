@@ -9,19 +9,72 @@ namespace FizzBuzzClass
     public static class FizzBuzz
     {
         //variabbles to hold the start and end point of the fizzbuzz sequence, defaulting to 0 to 100
-        static int start = 0;
-        static int end = 100;
+        static int g_start = 0;
+        static int g_end = 100;
 
-        //variables holding the divders to replace by a word
-        static int fizz = 3;
-        static int buzz = 5;
-        static int fizzbuzz = 3 * 5;   
+        //variables holding the divders to replace by a word( for easy modification)
+        static int g_fizz = 3;
+        static int g_buzz = 5;
+        static int g_fizzbuzz = 3 * 5;
 
-        
-        public static int[] Calculate(int start, int end)
+
+
+        /// <summary>
+        /// metode to return a fizzbuzz sequence with given start and end
+        /// </summary>
+        /// <param name="start">the start of the sequence</param>
+        /// <param name="end">the end of the sequence</param>
+        /// <returns>array of strings containing the fizzbuzz sequence</returns>
+        public static string[] Calculate(int start, int end)
         {
+            string[] sequence = new string[end + 1];
 
-            return null;
+            //using a for loop to check each number for fizzbuzz
+            for (int i = start; i < end + 1; i++)
+            {
+                //checking for fizz/buzz/fizzbuzz by using modulo
+                if (i % g_fizzbuzz == 0)
+                {
+                    sequence[i] = "FizzBuzz";
+                }
+                else if (i % g_fizz == 0)
+                {
+                    sequence[i] = "Fizz";
+
+                }
+                else if (i % g_buzz == 0)
+                {
+                    sequence[i] = "Buzz";
+                }
+                else
+                {
+                    sequence[i] = i.ToString();
+                }
+                
+            }
+
+            return sequence;
+        }
+
+
+        /// <summary>
+        /// metode to return a fizzbuzz sequence with given end starting from 0
+        /// </summary>
+        /// <param name="end">the end of the sequence</param>
+        /// <returns>array of strings containing the fizzbuzz sequence</returns>
+        public static string[] Calculate(int end)
+        {
+            return Calculate(g_start, end);
+
+        }
+
+        /// <summary>
+        /// methode to retun a fizzbuzz sequence with the classic start/end of 0 and 100
+        /// </summary>
+        /// <returns></returns>
+        public static string[] Calculate()
+        {
+            return Calculate(g_start, g_end);
         }
 
 
